@@ -39,7 +39,6 @@ main {
   background: #aa3871;
   grid-column: 2 / 3;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: #000 1px 1px 2px;
   padding: 1rem;
 }
 
