@@ -17,6 +17,8 @@ header {
 }
 
 main {
+  text-align: center;
+  text-size-adjust: 100%;  
   background: #a32464;
   grid-column: 2 / 3;
 }
