@@ -11,6 +11,21 @@ header {
   grid-column: 1 / 4;
 }
 
+nav ul {
+  display: flex; 
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
 .left-sidebar {
   background: #ccae07;
   grid-column: 1 / 2;
