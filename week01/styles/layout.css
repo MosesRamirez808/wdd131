@@ -29,7 +29,7 @@ nav a {
 }
 
 .left-sidebar {
-  background: #ccae07;
+  background: #7a5571;
   grid-column: 1 / 2;
   font-family: 'Merriweather Sans', sans-serif;
 }
@@ -44,7 +44,7 @@ main {
 }
 
 .right-sidebar {
-  background: #772362;
+  background: #a03084;
   grid-column: 3 / 4;
   font-family: 'Merriweather Sans', sans-serif;
 }
