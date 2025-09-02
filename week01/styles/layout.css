@@ -30,7 +30,6 @@ nav a {
 
 .left-sidebar {
   background: #7a5571;
-  color: #fff
   grid-column: 1 / 2;
   font-family: 'Merriweather Sans', sans-serif;
 }
@@ -39,7 +38,6 @@ main {
   text-align: center;
   text-size-adjust: 100%;  
   background: #a32464;
-  color: #fff
   grid-column: 2 / 3;
   font-family: 'Montserrat', sans-serif;
   text-shadow: #000 1px 1px 2px;
@@ -47,14 +45,12 @@ main {
 
 .right-sidebar {
   background: #a03084;
-  color: #fff
   grid-column: 3 / 4;
   font-family: 'Merriweather Sans', sans-serif;
 }
 
 footer {
   background: #6b304d;
-  color: #fff
   padding: 2rem;
   text-align: center;
   grid-column: 1 / 4;
