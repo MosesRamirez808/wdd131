@@ -5,28 +5,29 @@ body {
 }
 
 header {
+  text-align: center;
   background:#e3d26f;
   padding: 2rem;
   grid-column: 1 / 4;
 }
 
 .left-sidebar {
-  background: #e3d26f;
+  background: #ccae07;
   grid-column: 1 / 2;
 }
 
 main {
-  background: coral;
+  background: #a32464;
   grid-column: 2 / 3;
 }
 
 .right-sidebar {
-  background: #4E3822;
+  background: #772362;
   grid-column: 3 / 4;
 }
 
 footer {
-  background: #2f1b25;
+  background: #6b304d;
   padding: 2rem;
   text-align: center;
   grid-column: 1 / 4;
