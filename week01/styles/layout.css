@@ -2,6 +2,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template: auto 1fr auto / auto 1fr auto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -9,6 +10,7 @@ header {
   background:#e3d26f;
   padding: 2rem;
   grid-column: 1 / 4;
+  font-family: 'Merriweather', serif;
 }
 
 nav ul {
@@ -29,6 +31,7 @@ nav a {
 .left-sidebar {
   background: #ccae07;
   grid-column: 1 / 2;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 main {
@@ -36,11 +39,14 @@ main {
   text-size-adjust: 100%;  
   background: #a32464;
   grid-column: 2 / 3;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: #000 1px 1px 2px;
 }
 
 .right-sidebar {
   background: #772362;
   grid-column: 3 / 4;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 footer {
@@ -48,6 +54,7 @@ footer {
   padding: 2rem;
   text-align: center;
   grid-column: 1 / 4;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .left-sidebar,
