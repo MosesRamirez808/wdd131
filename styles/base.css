@@ -8,19 +8,20 @@
 
 body {
   font-family: 'Noto Sans', sans-serif;
-  line-height: 1.5;
+  line-height: 1.;
   background-color: #f0f0f5;
   color: #333;
-  padding: 1rem;
+  padding: 5rem;
 }
 
 header {
   background-color: #1a486d;
   color: white;
   padding: 1rem 0;
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-weight: 200;
+  font-size: .75rem;
   text-align: center;
+  
 }
 
 header span.highlight {
@@ -170,7 +171,7 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 0 0 6px 6px;
+  
 }
 
 footer .highlight {
