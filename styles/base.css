@@ -73,39 +73,65 @@ main {
 .card {
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 25px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
+  flex-direction: column 2,3;
 }
 
 .card h2 {
   background-color: #1a486d;
+  border-radius: 15px 15px 0 0;
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.75rem 1rem;
   text-align: center;
+
+}
+.fancy-underline {
+  position: relative;
+  text-align: center;
+  color: #1a5276;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background-color: #1a5276;
+}
+.card h3 {
+    color: #1a486d;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
 }
 
 .card.left .card-content {
   display: flex;
-  gap: 1rem;
+  flex-direction: row;      
+  align-items: flex-start;   
   padding: 1rem;
-  align-items: flex-start;
+  gap: 1rem;
 }
 
 .card.left .card-text {
-  flex: 2;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  flex: 1;                   
+  text-align: left;         
 }
 
 .card.left img {
-  width: 150px;
+  float: right;                
+  border-radius: 0%;
+  border: 2px solid #1a486d;
+  width: 120px;
   height: auto;
-  border-radius: 4px;
-  flex-shrink: 0;
   object-fit: cover;
 }
 
@@ -115,10 +141,13 @@ main {
 
 .card.right ul {
   list-style: disc inside;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding-left: 0;
-  color: #333;
+  scroll-padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: center;
+
 }
 
 .card.right ul li {
