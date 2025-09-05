@@ -10,7 +10,7 @@
 }
 
 html {
-  font-size: 16px; /* Base for rem units */
+  font-size: 16px; 
 }
 
 body {
@@ -43,7 +43,7 @@ body {
 header {
   background-color: #1a486d;
   color: white;
-  padding: 1rem 0 0;
+  padding: 1.5rem 0 0;
   font-weight: 300;
   font-size: 1rem;
   text-align: center;
@@ -64,6 +64,7 @@ header span.highlight {
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-bottom: 0rem;
 }
 
 .title-row span,
@@ -83,12 +84,13 @@ nav {
   font-weight: 500;
   font-size: 1rem;
   width: 100%;
+  margin: 0;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 10rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -173,6 +175,14 @@ main {
   height: auto;
   object-fit: cover;
 }
+/* --- Left Card Text 2--- */
+
+.card-text-2 {
+  float: right;
+  margin-top: 0rem;
+  text-align: left;
+}
+
 
 /* --- Right Card --- */
 .card.right .card-content {
@@ -180,12 +190,10 @@ main {
 }
 
 .card.right ul {
-  list-style: disc inside;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-left: 1rem;
+  list-style: disc outside;
+  padding-left: 5.5rem;
+  display: inline-block; 
+  text-align: left;      
 }
 
 .card.right ul li {
@@ -211,7 +219,7 @@ main {
   text-align: center;
   color: #1a5276;
   font-weight: bold;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .fancy-underline::after {
@@ -229,25 +237,28 @@ main {
 =========================== */
 .flag-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: row;       
+  align-items: flex-start;  
+  gap: 1rem; 
 }
 
 .flag-container img {
+  float: left;
   border-radius: 0;
   border: 0.125rem solid #1a486d;
   width: 8rem;
   height: auto;
   object-fit: cover;
+
 }
 
 .flag-caption {
-  margin-top: 0.5rem;
+  margin-top: 5rem;
   font-size: 0.9rem;
   font-weight: 500;
   color: #1a486d;
   text-align: center;
+  flex-direction: column;
 }
 
 /* ===========================
