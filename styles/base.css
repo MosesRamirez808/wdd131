@@ -1,3 +1,6 @@
+/* ===========================
+   RESET & GLOBAL STYLES
+=========================== */
 *,
 *::before,
 *::after {
@@ -6,53 +9,97 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px; /* Base for rem units */
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
   line-height: 1.6;
   background-color: #f0f0f5;
   color: #333;
-  padding: 5rem;
+  padding: 5rem 1rem;
   margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* ===========================
+   HEADER SECTION
+=========================== */
+.header-container {
+  background-color: #1f4b6e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.header-text {
+  text-align: center;
+  padding: 1rem;
 }
 
 header {
   background-color: #1a486d;
   color: white;
-  padding: 1rem 0;
-  padding-bottom: 0;
-  font-weight: 200;
-  font-size: .50rem;
+  padding: 1rem 0 0;
+  font-weight: 300;
+  font-size: 1rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  
+  width: 100%;
 }
 
 header span.highlight {
   color: #d4ff00;
 }
 
+/* ===========================
+   TITLE ROW (SPAN + H1)
+=========================== */
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.title-row span,
+.title-row h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
 nav {
   background-color: #2c2c2c;
-  padding: 0.50rem 0;
+  padding: 0.75rem 0;
   font-weight: 500;
   font-size: 1rem;
-  margin: 0;
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 9rem;
+  gap: 4rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: 0.rem;
-  border-radius: 5px;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -63,92 +110,82 @@ nav ul li a:focus {
   outline: none;
 }
 
+/* ===========================
+   MAIN CONTENT
+=========================== */
 main {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 56.25rem; /* 900px */
+  margin: 0 auto 1.5rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
+/* ===========================
+   CARD COMPONENT
+=========================== */
 .card {
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 25px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 1.5625rem; /* 25px */
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12); /* 1px 3px */
+  display: flex;
   flex-direction: column;
 }
 
 .card h2 {
   background-color: #1a486d;
-  border-radius: 15px 15px 0 0;
+  border-radius: 0.9375rem 0.9375rem 0 0; /* 15px */
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.75rem 1rem;
   text-align: center;
-
-}
-.fancy-underline {
-  position: relative;
-  text-align: center;
-  color: #1a5276;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.fancy-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6px;
-  height: 2px;
-  background-color: #1a5276;
-}
 .card h3 {
-    color: #1a486d;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    text-align: center;
+  color: #1a486d;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
+/* --- Left Card --- */
 .card.left .card-content {
   display: flex;
-  flex-direction: row;      
-  align-items: flex-start;   
+  flex-direction: row;
+  align-items: flex-start;
   padding: 1rem;
   gap: 1rem;
 }
 
 .card.left .card-text {
-  flex: 1;                   
-  text-align: left;         
+  flex: 1;
+  text-align: left;
 }
 
 .card.left img {
-  float: right;                
-  border-radius: 0%;
-  border: 2px solid #1a486d;
-  width: 120px;
+  border-radius: 0;
+  border: 0.125rem solid #1a486d; /* 2px */
+  width: 8rem;
   height: auto;
   object-fit: cover;
 }
 
+/* --- Right Card --- */
 .card.right .card-content {
   padding: 1rem;
 }
 
 .card.right ul {
   list-style: disc inside;
-  scroll-padding-left: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  padding-left: 1rem;
 }
 
 .card.right ul li {
@@ -156,7 +193,7 @@ main {
 }
 
 .card.right ul li a {
-  color: #4b0082;
+  color: #002e82;
   text-decoration: underline;
 }
 
@@ -166,6 +203,56 @@ main {
   outline: none;
 }
 
+/* ===========================
+   FANCY UNDERLINE
+=========================== */
+.fancy-underline {
+  position: relative;
+  text-align: center;
+  color: #1a5276;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+.fancy-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.375rem;
+  height: 0.125rem;
+  background-color: #1a5276;
+}
+
+/* ===========================
+   FLAG 
+=========================== */
+.flag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flag-container img {
+  border-radius: 0;
+  border: 0.125rem solid #1a486d;
+  width: 8rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.flag-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a486d;
+  text-align: center;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
 footer {
   background-color: #1a486d;
   color: white;
@@ -173,7 +260,6 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   font-weight: 500;
-  
 }
 
 footer .highlight {
@@ -187,7 +273,33 @@ footer .highlight {
   margin-top: 0.25rem;
 }
 
+/* ===========================
+   RESPONSIVE MEDIA QUERIES
+=========================== */
 @media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+
+  header {
+    font-size: 0.95rem;
+    padding: 1rem 0;
+  }
+
+  .title-row {
+    flex-direction: column;
+  }
+
+  .title-row span,
+  .title-row h1 {
+    font-size: 1.1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   main {
     grid-template-columns: 1fr;
   }
@@ -201,29 +313,8 @@ footer .highlight {
   .card.left img {
     margin-top: 1rem;
   }
-}
-.header-container {
-  background-color: #1f4b6e; 
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
 
-.header-text {
-  text-align: center;
-  padding: 1rem;
-}
-.title-row {
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  gap: .2rem; 
-}
-
-.title-row span,
-.title-row h1 {
-  margin: 0;
-  padding: 0;
-  white-space: nowrap; 
-  font-size: 1rem;
+  body {
+    padding: 2rem 1rem;
+  }
 }
