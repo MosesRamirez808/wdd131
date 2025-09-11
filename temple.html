@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A gallery of temple images with responsive design and a hamburger menu." />
+  <title>Temple Album</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Mobile-First CSS -->
+  <link rel="stylesheet" href="temples.css" />
+
+  <!-- Larger View CSS -->
+  <link rel="stylesheet" href="temples-large.css" media="(min-width: 768px)" />
+
+  <!-- JavaScript File (deferred) -->
+  <script src="temples.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Temple Album</h1>
+    
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="menuBtn" aria-label="Menu">☰</button>
+    
+    <nav id="mainNav">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Temple Gallery</h2>
+    <div class="grid-container">
+      <!-- Repeat this figure 9 times with different captions -->
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 1</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 2</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 3</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 4</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 5</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 6</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 7</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 8</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 9</figcaption>
+      </figure>
+        <figure>
+        <img src="images/temple-placeholder.jpg" alt="Temple Placeholder" />
+        <figcaption>Temple 10</figcaption>
+      </figure>    
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Moses Ramirez | Last Updated: <span id="lastModified"></span></p>
+  </footer>
+
+</body>
+</html>
