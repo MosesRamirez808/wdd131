@@ -1,4 +1,6 @@
-/* Global Variables */
+/* ==========================
+   Global Variables
+========================== */
 :root {
   --primary-color: #be0300;   /* Red */
   --secondary-color: #009708; /* Green */  
@@ -11,7 +13,9 @@
   --font-family: 'Italiana', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Base styles */
+/* ==========================
+   Base Styles
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -26,23 +30,23 @@ body {
   padding: 0 var(--gap);
 }
 
+/* ==========================
+   Header
+========================== */
 header {
   background-color: var(--primary-color);
   color: var(--neutral-color);
   padding: 1rem var(--gap);
   text-align: center;
-} 
-footer {
-  background-color: var(--secondary-color);
-  color: var(--neutral-color);
-  text-align: center;
-  padding: 1.5rem var(--gap);
 }
 
 header h1 {
   font-size: 4rem;
 }
 
+/* ==========================
+   Hero Section
+========================== */
 .hero img {
   width: 100%;
   height: auto;
@@ -50,6 +54,9 @@ header h1 {
   margin-top: 1rem;
 }
 
+/* ==========================
+   Main Content
+========================== */
 main {
   max-width: var(--max-width);
   margin: 2rem auto;
@@ -64,16 +71,21 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: larger;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
-/* Weather section */
+/* ==========================
+   Weather Section
+========================== */
 .weather h2 {
   color: var(--secondary-color);
   font-size: 2rem;
+  font-weight: bold;;
   position: relative;
+  letter-spacing: 1px;
 }
 
-/* Pseudo-element icon (only for larger screens) */
+/* Pseudo-icon for weather heading (desktop only) */
 @media (min-width: 768px) {
   .weather h2::after {
     content: " ⛅";
@@ -82,13 +94,23 @@ section {
   }
 }
 
-/* Footer */
+/* ==========================
+   Footer
+========================== */
 footer {
+  background-color: var(--secondary-color);
+  color: var(--neutral-color);
+  text-align: center;
+  padding: 1.5rem var(--gap);
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
 }
 
-/* Responsive layout */
+/* ==========================
+   Responsive Layout
+========================== */
 @media (min-width: 768px) {
   main {
     grid-template-columns: 2fr 1fr; /* Intro left, weather right */
