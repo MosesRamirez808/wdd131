@@ -158,13 +158,13 @@ footer {
 /* Data box (top-left) */
 .data-box {
   top: 5rem;
-  left: 2rem;
+  left: 4rem;
 }
 
 /* Weather box (bottom-right) */
 .weather-box {
-  bottom: 1.5rem;
-  right: 3rem;
+  bottom: 5rem;
+  right: 4rem;
   padding-right: 1rem;
 }
 
@@ -202,5 +202,6 @@ footer {
     margin-top: 1rem;
     max-width: 90%;
     width: 100%;
+    margin-bottom: 1rem;
   }
 }
