@@ -119,3 +119,55 @@ footer {
     margin-bottom: 1rem;
   }
 }
+.hero-container {
+  position: relative;
+}
+
+.hero-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Shared styles for both boxes */
+.hero-box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Data box (top-left) */
+.data-box {
+  top: 1rem;
+  left: 1rem;
+}
+
+/* Weather box (bottom-right) */
+.weather-box {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Optional styling */
+.hero-box h3 {
+  background-color: var(--secondary-color);
+  color: var(--neutral-color);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
+
+.hero-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hero-box li {
+  margin-bottom: 0.25rem;
+}
