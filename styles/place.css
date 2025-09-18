@@ -8,7 +8,7 @@
   --accent-color: #444;
   --max-width: 1200px;
   --gap: 1rem;
-  
+  --font-family: 'Italiana', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Base styles */
@@ -19,7 +19,6 @@
 }
 
 body {
-  --font-family: 'Italiana', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
