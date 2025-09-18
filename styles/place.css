@@ -195,7 +195,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }}
+  }
 
   .hero-box {
     position: static; /* Remove absolute positioning */
@@ -203,3 +203,4 @@ footer {
     max-width: 90%;
     width: 100%;
   }
+}
