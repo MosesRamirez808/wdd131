@@ -88,7 +88,6 @@ section {
 /* Pseudo-icon for weather heading (desktop only) */
 @media (min-width: 768px) {
   .weather h2::after {
-    content: " ⛅";
     font-size: 5rem;
     margin-left: 0.5rem;
   }
