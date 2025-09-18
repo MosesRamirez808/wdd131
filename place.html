@@ -22,15 +22,18 @@
 
   <!-- Hero Section -->
   <section class="hero-container">
-    <!-- Responsive Image -->
+    <h2 class=""visually-hidden">Italy Highlights</h2>
+    
+    <section class="hero-container">
     <picture>
       <source srcset="images/hero-large.webp" media="(min-width: 1024px)">
       <source srcset="images/hero-medium.webp" media="(min-width: 600px)">
       <img src="images/hero-small.webp" alt="Scenic view of St. Peter's Basilica" />
     </picture>
-
+    
+   <div class="hero-boxes-wrapper">
     <!-- Floating Data Box -->
-    <div class="hero-box data-box">
+    <section class="hero-box data-box">
       <h3>Data</h3>
       <ul>
         <li><strong>Area:</strong> 587,041 sq km</li>
@@ -42,10 +45,9 @@
         <li><strong>Calling Code:</strong> +261</li>
         <li><strong>Internet TLD:</strong> .mg</li>
       </ul>
-    </div>
-
-    <!-- Floating Weather Box -->
-    <div class="hero-box weather-box">
+    </section>
+        <!-- Floating Weather Box -->
+    <section class="hero-box weather-box">
       <h3>Weather ☁️</h3>
       <ul>
         <li><strong>Temperature:</strong> 10 °C</li>
@@ -53,7 +55,9 @@
         <li><strong>Wind:</strong> 5 km/h</li>
         <li><strong>Wind Chill:</strong> 9.8 °C</li>
       </ul>
-    </div>
+    </section>
+   </div>
+    </section>
   </section>
 
   <!-- Main Content -->
@@ -64,6 +68,7 @@
   <!-- Footer -->
   <footer>
     <p>&copy; <span id="year"></span> Moses Ramirez</p>
+    <p>Italy</p>
     <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 </body>
