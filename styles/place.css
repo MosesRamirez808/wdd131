@@ -84,12 +84,14 @@ header h1 {
 .data-box {
   top: 2rem;
   left: 2rem;
+  font-weight: bold;
 }
 
 /* Weather box (bottom-right) */
 .weather-box {
   bottom: 2rem;
   right: 2rem;
+  font-weight: bold;
 }
 
 .hero-box h3 {
@@ -99,6 +101,17 @@ header h1 {
   margin-bottom: 0.5rem;
   border-radius: 4px;
   font-size: 1.25rem;
+}
+.weather-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  vertical-align: middle;
 }
 
 .hero-box ul {
@@ -195,3 +208,4 @@ footer {
     font-weight: bold;
   }
 }
+
