@@ -169,7 +169,7 @@ footer {
 ========================== */
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr; /* Example: intro left, weather right */
+    grid-template-columns: 2fr 1fr; 
   }
 
   .hero {
