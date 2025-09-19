@@ -108,12 +108,10 @@ header h1 {
 }
 
 .weather-icon {
-  width: 16px;
-  height: 16px;
-  margin-left: 2px;
-  vertical-align: middle;
+  width: 30px !important;
+  max-width: 100%;
+  height: auto;
 }
-
 .hero-box ul {
   list-style: none;
   padding-left: 0;
