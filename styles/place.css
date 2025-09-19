@@ -32,8 +32,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding: 0;
-  margin: 0;
 }
 
 /* ==========================
@@ -53,11 +51,63 @@ header h1 {
 /* ==========================
    Hero Section
 ========================== */
-.hero img {
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.hero-container picture,
+.hero-container img {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 0;
+  object-fit: cover;
+}
+
+/* ==========================
+   Hero Boxes (Data & Weather)
+========================== */
+.hero-box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  font-size: 1rem;
+  font-weight: normal;
+  z-index: 1;
+}
+
+/* Data box (top-left) */
+.data-box {
+  top: 2rem;
+  left: 2rem;
+}
+
+/* Weather box (bottom-right) */
+.weather-box {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.hero-box h3 {
+  background-color: var(--secondary-color);
+  color: var(--neutral-color);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
+
+.hero-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hero-box li {
+  margin-bottom: 0.25rem;
 }
 
 /* ==========================
@@ -68,6 +118,7 @@ main {
   margin: 2rem auto;
   display: grid;
   gap: var(--gap);
+  padding: 0 var(--gap);
 }
 
 section {
@@ -91,7 +142,7 @@ section {
   letter-spacing: 1px;
 }
 
-/* Pseudo-icon for weather heading (desktop only) */
+/* Desktop pseudo-icon (optional) */
 @media (min-width: 768px) {
   .weather h2::after {
     font-size: 5rem;
@@ -118,92 +169,29 @@ footer {
 ========================== */
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 2fr 1fr; /* Intro left, weather right */
+    grid-template-columns: 2fr 1fr; /* Example: intro left, weather right */
   }
 
   .hero {
     margin-bottom: 1rem;
-  }}
-
-/* ==========================
-   Hero Container Base Style
-========================== */
-.hero-container {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;  
-}
-
-.hero-container img {
-  width: 100%;
-  height: 100%; /* fill container height */
-  object-fit: cover;
-  display: block;
-}
-
-/* Shared styles for both boxes */
-.hero-box {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  max-width: 250px;
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-/* Data box (top-left) */
-.data-box {
-  top: 5rem;
-  left: 4rem;
-}
-
-/* Weather box (bottom-right) */
-.weather-box {
-  bottom: 5rem;
-  right: 4rem;
-  padding-right: 1rem;
-}
-
-/* Optional styling */
-.hero-box h3 {
-  background-color: var(--secondary-color);
-  color: var(--neutral-color);
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-  font-size: 1.25rem;
-}
-
-.hero-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.hero-box li {
-  margin-bottom: 0.25rem;
+  }
 }
 
 /* ==========================
-   Mobile View - Stack Boxes Below Image
+   Mobile View - Stack Boxes
 ========================== */
 @media (max-width: 767px) {
   .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 4rem;
   }
 
   .hero-box {
-    position: static; /* Remove absolute positioning */
-    margin-top: 1rem;
+    position: static;
+    margin: 1rem auto;
     max-width: 90%;
     width: 100%;
-    margin-bottom: 5rem;
     font-weight: bold;
   }
 }
