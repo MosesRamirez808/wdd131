@@ -30,7 +30,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    const headers = document.querySelectorAll('thead th[scope="col"]');
+    headers = document.querySelectorAll('thead th[scope="col"]');
     headers.forEach(function (header, index) {
       header.style.cursor = 'pointer';
       header.addEventListener('click', function () {
