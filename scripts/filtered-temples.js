@@ -90,18 +90,18 @@ const temples = [
       imageUrl:"https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2054.jpg"
     },
     {
-      templeName: "Paris France",
-      location: "Le Chesnay, France",
-      dedicated: "2017, May, 21",
+      templeName: "Monterrey Mexico",
+      location: "Monterrey, Mexico",
+      dedicated: "2000, December, 17",
       area: 44000,
-      imageUrl:"https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2054.jpg"
+      imageUrl:"https://churchofjesuschristtemples.org/assets/img/temples/monterrey-mexico-temple/monterrey-mexico-temple-46835.jpg"
     },
     {
-      templeName: "Paris France",
-      location: "Le Chesnay, France",
-      dedicated: "2017, May, 21",
+      templeName: "Nuku'alofa Tonga",
+      location: "Nuku'alofa, Tonga",
+      dedicated: "2019, December, 15",
       area: 44000,
-      imageUrl:"https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2054.jpg"
+      imageUrl:"https://churchofjesuschristtemples.org/assets/img/temples/nuku'alofa-tonga-temple/nuku'alofa-tonga-temple-12094.jpg"
     }
   ];
 
