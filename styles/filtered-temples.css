@@ -131,13 +131,29 @@ footer {
 
 /* Style for the temple image inside the card */
 .grid-container img {
-  margin-top: auto; /* Push image to bottom */
+  margin-top: auto; 
   width: 100%;
   height: auto;
   border-radius: 6px;
   box-shadow: 10px 10px 20px #000000;
+  aspect-ratio: 16 / 18;
+  object-fit: cover;
 }
 
 .grid-container {
   align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  #menuBtn {
+    display: none;
+  }
 }

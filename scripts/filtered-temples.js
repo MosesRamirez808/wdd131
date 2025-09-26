@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+const grid = document.querySelector(".grid-container"); grid.replaceChildren();
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -182,6 +183,9 @@ function createTempleCard(filteredTemples) {
     area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
     img.setAttribute("src", temple.imageUrl);
     img.setAttribute("alt", temple.alt);
+    img.setAttribute("loading", temple.loading);
+    img.setAttribute("width", "400");
+    img.setAttribute("height", "250");
 
     card.appendChild(name);
     card.appendChild(location);
