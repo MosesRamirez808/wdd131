@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.getElementById("mainNav");
 
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
+ menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("show");
+  const isExpanded = nav.classList.contains("show");
+  menuBtn.setAttribute("aria-expanded", isExpanded);
+});
 
   // Set current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -127,9 +129,14 @@ const largeTemplesLink = document.querySelector("#largeTemples");
 const smallTemplesLink = document.querySelector("#smallTemples");
 const homeLink = document.querySelector("#home");
 
+
+function clearGrid() {
+  document.querySelector(".grid-container").replaceChildren();
+}
+
 // Home - Show all temples
 homeLink.addEventListener("click", () => {
-  document.querySelector(".grid-container").innerHTML = "";
+  clearGrid();
   createTempleCard(temples);
 });
 
@@ -139,7 +146,7 @@ oldTemplesLink.addEventListener("click", () => {
     const year = parseInt(temple.dedicated.split(",")[0]);
     return year < 1975;
   });
-  document.querySelector(".grid-container").innerHTML = "";
+  clearGrid();
   createTempleCard(oldTemples);
 });
 
@@ -149,21 +156,21 @@ newTemplesLink.addEventListener("click", () => {
     const year = parseInt(temple.dedicated.split(",")[0]);
     return year >= 1975;
   });
-  document.querySelector(".grid-container").innerHTML = "";
+  clearGrid();
   createTempleCard(newTemples);
 });
 
 // Large Temples - Area > 10,000 sq ft
 largeTemplesLink.addEventListener("click", () => {
   let largeTemples = temples.filter(temple => temple.area > 10000);
-  document.querySelector(".grid-container").innerHTML = "";
+  clearGrid();
   createTempleCard(largeTemples);
 });
 
 // Small Temples - Area <= 10,000 sq ft
 smallTemplesLink.addEventListener("click", () => {
   let smallTemples = temples.filter(temple => temple.area <= 10000);
-  document.querySelector(".grid-container").innerHTML = "";
+  clearGrid();
   createTempleCard(smallTemples);
 });
 
