@@ -1,8 +1,6 @@
-/* filtered-temples.css (Mobile-First) */
+/* filtered-temples.css (Mobile-First */
 
-/* ============================
-   Base Reset
-============================ */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +15,7 @@ body {
   padding: 1rem;
 }
 
-/* ============================
-   Header
-============================ */
+/* Header */
 header {
   background-color: #004080;
   color: white;
@@ -33,9 +29,7 @@ header h1 {
   text-align: center;
 }
 
-/* ============================
-   Hamburger Button
-============================ */
+/* Hamburger Button */
 #menuBtn {
   background: none;
   border: none;
@@ -48,11 +42,9 @@ header h1 {
   display: block;
 }
 
-/* ============================
-   Navigation
-============================ */
+/* Navigation */
 nav {
-  display: none;
+  display: none; 
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
@@ -63,7 +55,7 @@ nav a {
   color: white;
   font-size: 2rem;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
@@ -72,13 +64,12 @@ nav a:hover {
   background-color: #0066cc;
 }
 
+
 nav.show {
   display: flex;
 }
 
-/* ============================
-   Main Content
-============================ */
+
 main {
   max-width: 800px;
   margin: 2rem auto;
@@ -91,19 +82,43 @@ main h2 {
   margin-bottom: 1rem;
 }
 
-/* ============================
-   Grid Layout for Images
-============================ */
+/* Grid Layout for Images */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  align-items: stretch;
 }
 
-/* ============================
-   Temple Cards
-============================ */
+
+/* Figures */
+figure {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  display: block;
+  height: auto;
+  
+}
+
+figcaption {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+/* Style for each temple card */
 .grid-container section {
   display: flex;
   flex-direction: column;
@@ -114,43 +129,15 @@ main h2 {
   height: 100%;
 }
 
-/* Temple Image inside Card */
+/* Style for the temple image inside the card */
 .grid-container img {
-  margin-top: auto;
+  margin-top: auto; /* Push image to bottom */
   width: 100%;
   height: auto;
   border-radius: 6px;
   box-shadow: 10px 10px 20px #000000;
 }
 
-/* ============================
-   Figures
-============================ */
-figure {
-  background-color: white;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-figure img {
-  width: 100%;
-  display: block;
-  height: auto;
-}
-
-figcaption {
-  padding: 0.5rem;
-  font-weight: bold;
-}
-
-/* ============================
-   Footer
-============================ */
-footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.grid-container {
+  align-items: stretch;
 }
