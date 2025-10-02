@@ -31,6 +31,13 @@
     </nav>
     </header>
     <main>
+  <!-- Logo Box (you can add an image or logo inside here) -->
+ <div class="circle-row">
+  <div class="circle-box">Left Image</div>
+  <div class="logo-box">LOGO</div>
+  <div class="circle-box">Right Image</div>
+</div>
+
   <!-- Info Box -->
   <div class="info-box">
     <section>
@@ -73,16 +80,16 @@
       </thead>
       <tbody>
         <tr>
-          <td>Daily Snack Ideas</td>
-          <td>Get inspired with new snack ideas every day. Try our featured recipe and start your day deliciously!</td>
+          <td>Weekly Snacks</td>
+          <td>A new recipe every week!</td>
         </tr>
         <tr>
-          <td>Movie Snack Ideas</td>
-          <td>Perfect pairings for your next movie night. Get ready to munch! Get inspired with our curated snack ideas.</td>
+          <td>Monthly Treat Box</td>
+          <td>Handpicked recipes each month.</td>
         </tr>
         <tr>
-          <td>Seasonal Snack Ideas</td>
-          <td>Whether it's summer picnics or winter holidays, get inspired with seasonal snack ideas. From Christmas cookies to summer fruit platters, we've got you covered!</td>
+          <td>Seasonal Specials</td>
+          <td>Holiday and seasonal snack ideas.</td>
         </tr>
       </tbody>
     </table>
@@ -98,25 +105,28 @@
           <legend>Select a Subscription Option:</legend>
 
           <label>
-            <input type="radio" name="subscription" value="daily" required>
-            Daily Snack Ideas - New snack ideas every day.
+            <input type="radio" name="subscription" value="weekly" required>
+            Weekly Snacks - A new recipe every week!
           </label><br>
 
           <label>
             <input type="radio" name="subscription" value="monthly">
-            Movie Snack Ideas - Perfect for your next movie night.
+            Monthly Treat Box - Handpicked recipes each month.
           </label><br>
+
           <label>
             <input type="radio" name="subscription" value="seasonal">
-            Seasonal Snack Ideas - Holiday and seasonal snack ideas.
+            Seasonal Specials - Holiday and seasonal snack ideas.
           </label><br>
         </fieldset>
         <label for="name">Your First and Last Name:</label><br>
         <input type="text" id="name" name="name" placeholder="John Doe" required><br><br>
         <label for="email">Your Email:</label><br>
         <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+        <button type="submit">Subscribe</button>
       </form>
-      <button type="submit">Subscribe</button>
+
       <div id="confirmationMessage" style="margin-top: 1em;"></div>
     </section>
   </div>

@@ -8,14 +8,14 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff8f0;
-  color: #474647; /* Davy's Gray */
+  color: #474647;
   line-height: 1.6;
   padding: 1rem;
 }
 
 /* Header */
 header {
-  background-color: #2D7DD2; /* Steel Blue */
+  background-color: #2D7DD2;
   text-align: center;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -37,37 +37,36 @@ nav a {
 }
 
 nav a:hover {
-  color: #EEB902; /* Saffron */
+  color: #EEB902;
 }
 
 /* Grid Layout */
 main {
   display: grid;
   grid-template-areas:
-    "logo title"
+    "title title"
+    "circleRow circleRow"
     "info ideas"
-    "subscription form"; /* changed here */
-  grid-template-columns: 1fr 1fr; /* equal width columns */
+    "subscription form";
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* --- Updated Title Block --- */
-/* Title Block now contains the logo box inside */
+/* Title Block */
 .title-box {
   grid-area: title;
-  background-color: #EEB902; /* Saffron */
+  background-color: #EEB902;
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   border-radius: 8px;
-  /* Removed font-size, text-align, color, font-weight as no text */
 }
 
-/* Logo Box INSIDE the title box */
+/* Logo inside Title */
 .title-box .logo-box {
   background-color: #ffffff;
   border: 2px dashed #ccc;
@@ -76,30 +75,64 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0; /* no extra margin */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
 }
 
-/* Remove standalone logo-box styles since it is now inside title-box */
-/* But if your HTML has a separate .logo-box element, this style will still apply */
+/* Standalone logo-box fallback */
 .logo-box {
-  /* No grid-area, no height here, style overridden by .title-box .logo-box */
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
 }
 
-/* Info Block */
+/* Circle Row for Logo + Images */
+.circle-row {
+  grid-area: circleRow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Circular image boxes */
+.circle-box {
+  width: 150px;
+  height: 150px;
+  background-color: #ffffff;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Info Box */
 .info-box {
   grid-area: info;
   background-color: #ffffff;
   padding: 1rem;
-  border: 2px solid #97CC04; /* Yellow Green */
+  border: 2px solid #97CC04;
   border-radius: 6px;
 }
 
-/* Snack Ideas Block */
+/* Snack Ideas Box */
 .ideas-box {
   grid-area: ideas;
-  background-color: #F45D01; /* Persimmon */
+  background-color: #F45D01;
   color: white;
   border-radius: 50%;
   padding: 2rem;
@@ -122,10 +155,11 @@ main {
 .subscription-table table {
   width: 100%;
   border-collapse: collapse;
+  background-color: transparent;
 }
 
 .subscription-table th {
-  background-color: #97CC04; /* Yellow Green */
+  background-color: #97CC04;
   color: white;
 }
 
@@ -136,30 +170,28 @@ main {
   text-align: left;
 }
 
-/* Subscription Form - Updated with two-column layout and smaller box */
+/* Subscription Form */
 .subscription-form {
   grid-area: form;
-  max-width: 600px;  /* shrink form width */
-  margin: 0 auto;    /* center horizontally */
+  max-width: 600px;
+  margin: 0 auto;
   background-color: #ffffff;
   padding: 1rem;
-  border: 2px solid #2D7DD2; /* Steel Blue */
+  border: 2px solid #2D7DD2;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .subscription-form form {
   display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap; /* wrap on small screens */
+  flex-wrap: wrap;
 }
 
-/* Left column: subscription options */
 .subscription-options {
-  flex: 1 1 45%; /* grow/shrink, about 45% width */
+  flex: 1 1 45%;
 }
 
-/* Right column: name & email inputs */
 .subscription-info {
   flex: 1 1 45%;
   display: flex;
@@ -167,21 +199,19 @@ main {
   gap: 1rem;
 }
 
-/* Style inputs inside right column */
 .subscription-info label,
 .subscription-info input {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Style the submit button to appear below both columns */
 .subscription-form button {
   margin-top: 1rem;
   align-self: center;
   max-width: 150px;
   padding: 0.5rem;
   font-size: 1rem;
-  background-color: #F45D01; /* Persimmon */
+  background-color: #F45D01;
   color: white;
   border: none;
   cursor: pointer;
@@ -195,12 +225,12 @@ main {
 /* Confirmation Message */
 #confirmationMessage {
   margin-top: 0.5rem;
-  color: #2D7DD2; /* Steel Blue */
+  color: #2D7DD2;
 }
 
 /* Footer */
 footer {
-  background-color: #474647; /* Davy's Gray */
+  background-color: #474647;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
@@ -208,7 +238,7 @@ footer {
 }
 
 footer a {
-  color: #EEB902; /* Saffron */
+  color: #EEB902;
   text-decoration: underline;
 }
 
@@ -225,49 +255,29 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+  .circle-row {
+    flex-direction: column;
+  }
+
   .ideas-box {
     border-radius: 0;
   }
 
-  /* Make subscription form stack columns on small screens */
   .subscription-form form {
     flex-direction: column;
   }
 }
 
-/* Floating boxes for each grid area */
+/* Common Styles for Floating Boxes */
 .logo-box,
 .title-box,
 .info-box,
 .ideas-box,
 .subscription-table,
 .subscription-form {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  border-radius: 8px; /* smooth corners */
-  padding: 1rem; /* add spacing inside */
-  background-clip: padding-box; /* keep bg inside rounded corners */
-}
-
-/* To keep ideas-box text centered vertically and horizontally */
-.ideas-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem; /* keep your existing padding */
-}
-
-/* Adjust subscription table padding for inner table */
-.subscription-table table {
-  background-color: transparent; /* inherit bg of container */
-}
-
-/* If you want a bit of margin below each box for breathing room */
-.logo-box,
-.title-box,
-.info-box,
-.ideas-box,
-.subscription-table,
-.subscription-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  background-clip: padding-box;
   margin-bottom: 1rem;
 }
