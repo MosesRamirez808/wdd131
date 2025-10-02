@@ -326,3 +326,6 @@ footer a {
   }
 }
 
+main, .info-box, .subscription-form, .ideas-box, .title-box {
+  transition: all 0.3s ease-in-out;
+}
