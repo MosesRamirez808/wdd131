@@ -91,10 +91,10 @@
                 <mxCell id="hpz6M3_p9SZVhZBs3GKl-29" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry x="10" y="10" width="830" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="SNACK PICS" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+                <mxCell id="2" value="SNACK PICS" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
                     <mxGeometry x="100" y="130" width="130" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="SNACKSOICS" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" vertex="1" parent="1">
+                <mxCell id="3" value="SNACKSOICS" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_2;whiteSpace=wrap;" parent="1" vertex="1">
                     <mxGeometry x="620" y="110" width="135" height="110" as="geometry"/>
                 </mxCell>
             </root>
