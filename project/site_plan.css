@@ -1,3 +1,15 @@
+/* Color Schema
+   Primary Blue: #2D7DD2
+   Secondary Yellow: #EEB902
+   Accent Orange: #F45D01
+   Light Green: #97CC04
+   Dark Gray: #474647
+   Light Background: #fff8f0
+   Used for text, backgrounds, borders, and highlights
+   */
+   /*Typography used: Merriweather, sans-serif */ 
+
+
 /* Reset + Base Styles */
 * {
   box-sizing: border-box;
