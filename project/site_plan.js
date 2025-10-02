@@ -22,38 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
         subscribedAt: new Date().toISOString()
       };
 
-      // Get existing subscribers from localStorage or start empty
       const existingSubscribers = JSON.parse(localStorage.getItem("snackSubscribers") || "[]");
-
-      // Add new subscriber
       existingSubscribers.push(subscriber);
-
-      // Save updated array back to localStorage
       localStorage.setItem("snackSubscribers", JSON.stringify(existingSubscribers));
 
       confirmBox.textContent = `Thanks for subscribing, ${name}! You chose the "${plan}" plan.`;
 
-      // Prepare CSV content with all subscribers
-      const csvHeader = "Name,Email,Plan,SubscribedAt\n";
-      const csvRows = existingSubscribers.map(sub => 
-        `"${sub.name}","${sub.email}","${sub.plan}","${sub.subscribedAt}"`
-      ).join("\n");
-      const csvContent = csvHeader + csvRows;
-
-     
-      
-      // Use a filename with timestamp so it doesn't overwrite old downloads
-      link.download = `subscribers_${Date.now()}.csv`;
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // OPTIONAL: Send to server to append to subscriber.txt
+      fetch("appendSubscriber.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(subscriber)
+      }).catch(err => console.error("Failed to append subscriber to file:", err));
 
       subscribeForm.reset();
     });
   }
 
-  // --- RECIPES LOADING AND DISPLAY ---
+  // RECIPES LOADING AND DISPLAY
   const recipesContainer = document.getElementById("recipesContainer");
   if (recipesContainer) {
     fetch("snacks.txt")
@@ -71,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // --- DISPLAY RECIPES ---
   function displayRecipes(recipes) {
     if (!recipes.length) {
       recipesContainer.textContent = "No recipes found.";
@@ -94,44 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- PARSE TXT (Stub) ---
-  // You must customize this parser according to your snacks.txt format
   function parseTXT(text) {
-  
-    return [];
+    const lines = text.trim().split('\n');
+    if (lines.length < 2) return [];
+
+    const headers = lines[0].split(',');
+
+    return lines.slice(1).map(line => {
+      const columns = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+      let recipe = {};
+      headers.forEach((header, index) => {
+        recipe[header.trim()] = columns && columns[index]
+          ? columns[index].replace(/^"|"$/g, '')
+          : "";
+      });
+      return recipe;
+    });
   }
 
-  // --- LAST MODIFIED SECTION ---
   const lastModifiedSpan = document.getElementById("lastModified");
   if (lastModifiedSpan) {
     lastModifiedSpan.textContent = document.lastModified;
   }
 });
-function parseTXT(text) {
-  // Split into lines
-  const lines = text.trim().split('\n');
-
-  if (lines.length < 2) return []; // No data
-
-  // Get headers from first line
-  const headers = lines[0].split(',');
-
-  // Parse each subsequent line into an object
-  const recipes = lines.slice(1).map(line => {
-    // Split line into columns - simple split by comma, improve if you have commas inside quotes
-    const columns = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-
-    let recipe = {};
-    headers.forEach((header, index) => {
-      if (columns && columns[index]) {
-        // Remove possible surrounding quotes from values
-        recipe[header.trim()] = columns[index].replace(/^"|"$/g, '');
-      } else {
-        recipe[header.trim()] = "";
-      }
-    });
-    return recipe;
-  });
-
-  return recipes;
-}
