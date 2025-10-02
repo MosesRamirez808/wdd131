@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Moses Ramirez">
+  <meta name="description" content="Submit your favorite snack idea to Snack Time Hub.">
+  <title>Snack Time Hub - Submit a Snack</title>
+  
+  <link rel="stylesheet" href="site_plan.css">
+
+  <script src="site_plan.js" defer></script>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:opsz@18..144&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=TASA+Explorer:wght@400..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Snack Time Hub</h1>
+    <nav>
+      <ul>
+        <li><a href="site_plan.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="featured_snack.html">Submit a Snack</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Share Your Favorite Snack!</h2>
+      <p>We love discovering new snack ideas! Fill out the form below to submit yours.</p>
+      <form id="snackForm">
+        <label for="snackName">Snack Name:</label>
+        <input type="text" id="snackName" name="snackName" required>
+
+        <label for="snackType">Snack Type:</label>
+        <select id="snackType" name="snackType" required>
+          <option value="">Choose one</option>
+          <option value="sweet">Sweet</option>
+          <option value="savory">Savory</option>
+          <option value="healthy">Healthy</option>
+          <option value="quick">Quick</option>
+        </select>
+
+        <label for="snackDescription">Description:</label>
+        <textarea id="snackDescription" name="snackDescription" rows="4" required></textarea>
+
+        <button type="submit">Submit Snack</button>
+      </form>
+    </section>
+
+   <section>
+  <h2>Recently Submitted Snacks</h2>
+ <div id="recipesContainer">Loading recipes...</div>
+  
+  </ul>
+</section>
+  </main>
+
+  <script src="script.js"></script>
+  <footer>
+<p>&copy; 2025 Snack Time Hub | Moses Ramirez</p>
+<p>🍕Snack Time Hub🍕 </p>
+<p>Last modified: <span id="lastModified"></span></p>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,200 @@
+/* Reset + Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #474647; /* Davy's Gray */
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* Header */
+header {
+  background-color: #2D7DD2; /* Steel Blue */
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #EEB902; /* Saffron */
+}
+
+/* Grid Layout */
+main {
+  display: grid;
+  grid-template-areas:
+    "logo title"
+    "info ideas"
+    "subscription subscription"
+    "form form";
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Logo Block */
+.logo-box {
+  grid-area: logo;
+  background-color: #ffffff;
+  border: 2px dashed #ccc;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title Block */
+.title-box {
+  grid-area: title;
+  background-color: #EEB902; /* Saffron */
+  padding: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #474647; /* Davy's Gray */
+  font-weight: bold;
+}
+
+/* Info Block */
+.info-box {
+  grid-area: info;
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 2px solid #97CC04; /* Yellow Green */
+  border-radius: 6px;
+}
+
+/* Snack Ideas Block */
+.ideas-box {
+  grid-area: ideas;
+  background-color: #F45D01; /* Persimmon */
+  color: white;
+  border-radius: 50%;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  font-weight: bold;
+}
+
+/* Subscription Table */
+.subscription-table {
+  grid-area: subscription;
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.subscription-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subscription-table th {
+  background-color: #97CC04; /* Yellow Green */
+  color: white;
+}
+
+.subscription-table th,
+.subscription-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Subscription Form */
+.subscription-form {
+  grid-area: form;
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 2px solid #2D7DD2; /* Steel Blue */
+  border-radius: 6px;
+}
+
+.subscription-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.subscription-form input,
+.subscription-form select,
+.subscription-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.subscription-form button {
+  background-color: #F45D01; /* Persimmon */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.subscription-form button:hover {
+  background-color: #d04900;
+}
+
+/* Confirmation Message */
+#confirmationMessage {
+  margin-top: 0.5rem;
+  color: #2D7DD2; /* Steel Blue */
+}
+
+/* Footer */
+footer {
+  background-color: #474647; /* Davy's Gray */
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+footer a {
+  color: #EEB902; /* Saffron */
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  main {
+    grid-template-areas:
+      "logo"
+      "title"
+      "info"
+      "ideas"
+      "subscription"
+      "form";
+    grid-template-columns: 1fr;
+  }
+
+  .ideas-box {
+    border-radius: 0;
+  }
+}
