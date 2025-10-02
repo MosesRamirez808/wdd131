@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ).join("\n");
       const csvContent = csvHeader + csvRows;
 
-      // Create a Blob and download
-      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-      const link = document.createElement("a");
+     
       
       // Use a filename with timestamp so it doesn't overwrite old downloads
       link.download = `subscribers_${Date.now()}.csv`;
