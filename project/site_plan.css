@@ -46,35 +46,45 @@ main {
   grid-template-areas:
     "logo title"
     "info ideas"
-    "subscription subscription"
-    "form form";
-  grid-template-columns: 1fr 2fr;
+    "subscription form"; /* changed here */
+  grid-template-columns: 1fr 1fr; /* equal width columns */
   gap: 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* Logo Block */
-.logo-box {
-  grid-area: logo;
-  background-color: #ffffff;
-  border: 2px dashed #ccc;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Title Block */
+/* --- Updated Title Block --- */
+/* Title Block now contains the logo box inside */
 .title-box {
   grid-area: title;
   background-color: #EEB902; /* Saffron */
   padding: 1rem;
-  font-size: 1.8rem;
-  text-align: center;
-  color: #474647; /* Davy's Gray */
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 8px;
+  /* Removed font-size, text-align, color, font-weight as no text */
+}
+
+/* Logo Box INSIDE the title box */
+.title-box .logo-box {
+  background-color: #ffffff;
+  border: 2px dashed #ccc;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; /* no extra margin */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Remove standalone logo-box styles since it is now inside title-box */
+/* But if your HTML has a separate .logo-box element, this style will still apply */
+.logo-box {
+  /* No grid-area, no height here, style overridden by .title-box .logo-box */
 }
 
 /* Info Block */
@@ -126,35 +136,56 @@ main {
   text-align: left;
 }
 
-/* Subscription Form */
+/* Subscription Form - Updated with two-column layout and smaller box */
 .subscription-form {
   grid-area: form;
+  max-width: 600px;  /* shrink form width */
+  margin: 0 auto;    /* center horizontally */
   background-color: #ffffff;
   padding: 1rem;
   border: 2px solid #2D7DD2; /* Steel Blue */
   border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .subscription-form form {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* wrap on small screens */
 }
 
-.subscription-form input,
-.subscription-form select,
+/* Left column: subscription options */
+.subscription-options {
+  flex: 1 1 45%; /* grow/shrink, about 45% width */
+}
+
+/* Right column: name & email inputs */
+.subscription-info {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Style inputs inside right column */
+.subscription-info label,
+.subscription-info input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style the submit button to appear below both columns */
 .subscription-form button {
+  margin-top: 1rem;
+  align-self: center;
+  max-width: 150px;
   padding: 0.5rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.subscription-form button {
   background-color: #F45D01; /* Persimmon */
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .subscription-form button:hover {
@@ -197,4 +228,46 @@ footer a {
   .ideas-box {
     border-radius: 0;
   }
+
+  /* Make subscription form stack columns on small screens */
+  .subscription-form form {
+    flex-direction: column;
+  }
+}
+
+/* Floating boxes for each grid area */
+.logo-box,
+.title-box,
+.info-box,
+.ideas-box,
+.subscription-table,
+.subscription-form {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  border-radius: 8px; /* smooth corners */
+  padding: 1rem; /* add spacing inside */
+  background-clip: padding-box; /* keep bg inside rounded corners */
+}
+
+/* To keep ideas-box text centered vertically and horizontally */
+.ideas-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem; /* keep your existing padding */
+}
+
+/* Adjust subscription table padding for inner table */
+.subscription-table table {
+  background-color: transparent; /* inherit bg of container */
+}
+
+/* If you want a bit of margin below each box for breathing room */
+.logo-box,
+.title-box,
+.info-box,
+.ideas-box,
+.subscription-table,
+.subscription-form {
+  margin-bottom: 1rem;
 }

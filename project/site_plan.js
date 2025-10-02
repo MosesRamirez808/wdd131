@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- SUBSCRIPTION FORM HANDLING ---
   const subscribeForm = document.getElementById("subscribeForm");
   const confirmBox = document.getElementById("confirmationMessage");
 
@@ -7,24 +6,51 @@ document.addEventListener("DOMContentLoaded", () => {
     subscribeForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
-      const plan = document.querySelector('input[name="plan"]:checked')?.value;
+      const plan = document.querySelector('input[name="subscription"]:checked')?.value;
 
-      if (!email || !plan) {
+      if (!name || !email || !plan) {
         alert("Please fill out all fields.");
         return;
       }
 
       const subscriber = {
+        name,
         email,
         plan,
         subscribedAt: new Date().toISOString()
       };
 
-      // Store subscriber in localStorage (can extend to save multiple later)
-      localStorage.setItem("snackSubscriber", JSON.stringify(subscriber));
+      // Get existing subscribers from localStorage or start empty
+      const existingSubscribers = JSON.parse(localStorage.getItem("snackSubscribers") || "[]");
 
-      confirmBox.textContent = `Thanks for subscribing! You chose the "${plan}" plan.`;
+      // Add new subscriber
+      existingSubscribers.push(subscriber);
+
+      // Save updated array back to localStorage
+      localStorage.setItem("snackSubscribers", JSON.stringify(existingSubscribers));
+
+      confirmBox.textContent = `Thanks for subscribing, ${name}! You chose the "${plan}" plan.`;
+
+      // Prepare CSV content with all subscribers
+      const csvHeader = "Name,Email,Plan,SubscribedAt\n";
+      const csvRows = existingSubscribers.map(sub => 
+        `"${sub.name}","${sub.email}","${sub.plan}","${sub.subscribedAt}"`
+      ).join("\n");
+      const csvContent = csvHeader + csvRows;
+
+      // Create a Blob and download
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      
+      // Use a filename with timestamp so it doesn't overwrite old downloads
+      link.download = `subscribers_${Date.now()}.csv`;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       subscribeForm.reset();
     });
   }
@@ -32,13 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- RECIPES LOADING AND DISPLAY ---
   const recipesContainer = document.getElementById("recipesContainer");
   if (recipesContainer) {
-    fetch("snacks.csv")
+    fetch("snacks.txt")
       .then(response => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.text();
       })
-      .then(csvText => {
-        const recipes = parseCSV(csvText);
+      .then(txtText => {
+        const recipes = parseTXT(txtText);
         displayRecipes(recipes);
       })
       .catch(error => {
@@ -47,29 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // --- FUNCTIONS FOR CSV PARSING AND DISPLAY ---
-  function parseCSV(text) {
-    const lines = text.trim().split("\n");
-    const headers = lines[0].split(",");
-    const data = lines.slice(1).map(line => {
-      // Basic CSV parsing, does not handle commas inside quotes
-      const values = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-      let obj = {};
-      headers.forEach((header, i) => {
-        obj[header.trim()] = values[i]?.replace(/(^"|"$)/g, "");
-      });
-      return obj;
-    });
-    return data;
-  }
-
+  // --- DISPLAY RECIPES ---
   function displayRecipes(recipes) {
     if (!recipes.length) {
       recipesContainer.textContent = "No recipes found.";
       return;
     }
 
-    // Clear existing content just in case
     recipesContainer.innerHTML = "";
 
     recipes.forEach(recipe => {
@@ -85,4 +95,45 @@ document.addEventListener("DOMContentLoaded", () => {
       recipesContainer.appendChild(recipeDiv);
     });
   }
+
+  // --- PARSE TXT (Stub) ---
+  // You must customize this parser according to your snacks.txt format
+  function parseTXT(text) {
+  
+    return [];
+  }
+
+  // --- LAST MODIFIED SECTION ---
+  const lastModifiedSpan = document.getElementById("lastModified");
+  if (lastModifiedSpan) {
+    lastModifiedSpan.textContent = document.lastModified;
+  }
 });
+function parseTXT(text) {
+  // Split into lines
+  const lines = text.trim().split('\n');
+
+  if (lines.length < 2) return []; // No data
+
+  // Get headers from first line
+  const headers = lines[0].split(',');
+
+  // Parse each subsequent line into an object
+  const recipes = lines.slice(1).map(line => {
+    // Split line into columns - simple split by comma, improve if you have commas inside quotes
+    const columns = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+
+    let recipe = {};
+    headers.forEach((header, index) => {
+      if (columns && columns[index]) {
+        // Remove possible surrounding quotes from values
+        recipe[header.trim()] = columns[index].replace(/^"|"$/g, '');
+      } else {
+        recipe[header.trim()] = "";
+      }
+    });
+    return recipe;
+  });
+
+  return recipes;
+}

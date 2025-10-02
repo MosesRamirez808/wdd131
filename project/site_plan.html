@@ -31,60 +31,97 @@
     </nav>
     </header>
     <main>
-        <section>
-  <h2>Subscribe for Snack Updates</h2>
-  <p>Choose your preferred snack plan and stay updated with fresh ideas!</p>
-  <form id="subscribeForm">
-    <fieldset>
-      <legend>Select a Subscription Option:</legend>
-
-      <label>
-        <input type="radio" name="subscription" value="weekly" required>
-        Weekly Snacks - A new recipe every week!
-      </label><br>
-
-      <label>
-        <input type="radio" name="subscription" value="monthly">
-        Monthly Treat Box - Handpicked recipes each month.
-      </label><br>
-
-      <label>
-        <input type="radio" name="subscription" value="seasonal">
-        Seasonal Specials - Holiday and seasonal snack ideas.
-      </label><br>
-    </fieldset>
-
-    <label for="email">Your Email:</label><br>
-    <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
-
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <div id="confirmationMessage" style="margin-top: 1em;"></div>
-</section>
-
+  <!-- Info Box -->
+  <div class="info-box">
     <section>
-        <h2>What we are about.</h2>
-        <p>Snack Time Hub is your go-to destination for delicious snacks and treats.</p>
+      <h2>What we are about.</h2>
+      <p>Snack Time Hub is your go-to destination for delicious snacks and treats.</p>
     </section>
 
     <section>
-        <h2>About</h2>
-        <p>
-            Snack Time Hub is a digital destination for snack lovers of all ages. 
-            The site provides snack recipes, product reviews, healthy alternatives, and creative snack ideas for different occasions. 
-            It serves as a fun, informative resource where users can discover new snacks, learn how to make them, and share their favorites with a snack-loving community.
-        </p>
+      <h2>About</h2>
+      <p>
+        Snack Time Hub is a digital destination for snack lovers of all ages. 
+        The site provides snack recipes, product reviews, healthy alternatives, and creative snack ideas for different occasions. 
+        It serves as a fun, informative resource where users can discover new snacks, learn how to make them, and share their favorites with a snack-loving community.
+      </p>
     </section>
+  </div>
 
+  <!-- Ideas Box -->
+  <div class="ideas-box">
     <section>
-        <h2>Snack Ideas</h2>
-        <ul>
-            <li>“What are some quick and healthy snacks I can make after school or work?”</li>
-            <li>“I want to host a movie night — what are some fun and unique snack ideas I can serve?”</li>
-        </ul>
+      <h2>Snack Ideas</h2>
+      <ul>
+        <li>“What are some quick and healthy snacks I can make after school or work?”</li>
+        <li>“I want to host a movie night — what are some fun and unique snack ideas I can serve?”</li>
+      </ul>
     </section>
+  </div>
+
+  <!-- Subscription Table Box -->
+  <div class="subscription-table">
+    <!-- If you have a table showing subscription plans or data, place it here -->
+    <!-- For now, you could put placeholder content or your plans -->
+    <h2>Subscription Plans</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Daily Snack Ideas</td>
+          <td>Get inspired with new snack ideas every day. Try our featured recipe and start your day deliciously!</td>
+        </tr>
+        <tr>
+          <td>Movie Snack Ideas</td>
+          <td>Perfect pairings for your next movie night. Get ready to munch! Get inspired with our curated snack ideas.</td>
+        </tr>
+        <tr>
+          <td>Seasonal Snack Ideas</td>
+          <td>Whether it's summer picnics or winter holidays, get inspired with seasonal snack ideas. From Christmas cookies to summer fruit platters, we've got you covered!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Subscription Form Box -->
+  <div class="subscription-form">
+    <section>
+      <h2>Subscribe for Snack Updates</h2>
+      <p>Choose your preferred snack plan and stay updated with fresh ideas!</p>
+      <form id="subscribeForm">
+        <fieldset>
+          <legend>Select a Subscription Option:</legend>
+
+          <label>
+            <input type="radio" name="subscription" value="daily" required>
+            Daily Snack Ideas - New snack ideas every day.
+          </label><br>
+
+          <label>
+            <input type="radio" name="subscription" value="monthly">
+            Movie Snack Ideas - Perfect for your next movie night.
+          </label><br>
+          <label>
+            <input type="radio" name="subscription" value="seasonal">
+            Seasonal Snack Ideas - Holiday and seasonal snack ideas.
+          </label><br>
+        </fieldset>
+        <label for="name">Your First and Last Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="John Doe" required><br><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+      </form>
+      <button type="submit">Subscribe</button>
+      <div id="confirmationMessage" style="margin-top: 1em;"></div>
+    </section>
+  </div>
 </main>
+
     <footer>
         <p>&copy; 2025 Snack Time Hub | Moses Ramirez</p>
 <p>🍕Snack Time Hub🍕 </p>
