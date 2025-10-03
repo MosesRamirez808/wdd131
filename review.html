@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h2>Thank You!</h2>
+    </header>
+
+    <main class="review-form">
+      <p>Your product review has been submitted successfully.</p>
+      <p>You have submitted <span id="review-count">0</span> review(s).</p>
+      <a href="form.html" class="submit-btn">Submit Another Review</a>
+    </main>
+
+    <footer class="footer">
+      <p>©2025 <span class="author">Moses Ramirez</span> Maui, Hawaii</p>
+      <p class="last-modification"></p>
+    </footer>
+  </div>
+
+  <script>
+    // Increase the review counter
+    let count = localStorage.getItem("reviewCount") || 0;
+    count++;
+    localStorage.setItem("reviewCount", count);
+    document.getElementById("review-count").textContent = count;
+
+    // Show last modified date
+    const lastModElem = document.querySelector('.last-modification');
+    lastModElem.textContent = `Last modified: ${new Date(document.lastModified).toLocaleString()}`;
+  </script>
+</body>
+</html>

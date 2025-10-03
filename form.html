@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="styles/form.css" />
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h2>Product Review</h2>
+    </header>
+
+    <form class="review-form" method="get" action="review.html">
+      <label for="productName" class="label-title">Product Name</label>
+      <select id="productName" name="productName" required>
+        <option value="">Choose a Product …</option>
+        <option value="Product A">Product A</option>
+       
+      </select>
+
+      <fieldset>
+        <legend>Overall Rating</legend>
+        <div class="rating">
+          <label><input type="radio" name="rating" value="1" /><span>★</span></label>
+          <label><input type="radio" name="rating" value="2" /><span>★★</span></label>
+          <label><input type="radio" name="rating" value="3" /><span>★★★</span></label>
+          <label><input type="radio" name="rating" value="4" /><span>★★★★</span></label>
+          <label><input type="radio" name="rating" value="5" /><span>★★★★★</span></label>
+        </div>
+      </fieldset>
+
+      <label for="installDate" class="label-title">Date of Installation</label>
+      <input type="date" id="installDate" name="installDate" placeholder="mm/dd/yyyy" />
+
+      <fieldset>
+        <legend>Which features did you find useful in the product?<br /><small>(Check all that apply)</small></legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="features" value="Durability" /> Durability</label>
+          <label><input type="checkbox" name="features" value="Ease of Use" /> Ease of Use</label>
+          <label><input type="checkbox" name="features" value="Performance" /> Performance</label>
+          <label><input type="checkbox" name="features" value="Design" /> Design</label>
+        </div>
+      </fieldset>
+
+      <label for="reviewText" class="label-title">Written Review <small>(Optional)</small></label>
+      <textarea id="reviewText" name="reviewText" rows="4" placeholder="Write your review here..."></textarea>
+
+      <label for="userName" class="label-title">Your Name <small>(Optional)</small></label>
+      <input type="text" id="userName" name="userName" placeholder="Your name" />
+
+      <button type="submit" class="submit-btn">Post Review</button>
+    </form>
+
+    <footer class="footer">
+      <p>©2025 <span class="author">Moses Ramirez</span> Maui, Hawaii</p>
+      <p class="last-modification"></p>
+    </footer>
+  </div>
+</body>
+</html>
