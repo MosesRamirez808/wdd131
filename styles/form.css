@@ -11,7 +11,8 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  color: #720E07; 
+  color: #000000; 
+  
 }
 
 .container {
@@ -137,21 +138,21 @@ textarea {
 
 .footer .last-modification {
   margin-top: 4px;
-  font-size: 0.65rem;
-  color: #8B6220; 
+  font-size: .80rem;
+  color: #ffffff;
 }
 
 fieldset legend {
   font-weight: 600;
   margin-bottom: 5px;
   line-height: 1.4;
-  color: #720E07; 
+  color: #000000; 
 }
 
 fieldset legend small {
   display: block;
-  font-size: 0.75rem;
-  color: #8B6220;
+  font-size: 0.80rem;
+  color: #000000;
   margin-top: 5px;
   
 }

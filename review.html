@@ -25,13 +25,12 @@
   </div>
 
   <script>
-    // Increase the review counter
+
     let count = localStorage.getItem("reviewCount") || 0;
     count++;
     localStorage.setItem("reviewCount", count);
     document.getElementById("review-count").textContent = count;
 
-    // Show last modified date
     const lastModElem = document.querySelector('.last-modification');
     lastModElem.textContent = `Last modified: ${new Date(document.lastModified).toLocaleString()}`;
   </script>
