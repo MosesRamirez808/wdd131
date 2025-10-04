@@ -8,13 +8,13 @@ body {
 }
 
 h1 {
-  background-color: #1D4D73; /* Dark blue bar */
-  color: white;              /* White text on top */
+  background-color: #1D4D73; 
+  color: white;             
   text-align: center;
-  padding: 1rem;             /* Adds space around text */
-  margin: 2rem 0;            /* Space above and below */
-  border-radius: 8px;        /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: soft shadow */
+  padding: 1rem;            
+  margin: 2rem 0;          
+  border-radius: 8px;        
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 h2 {
