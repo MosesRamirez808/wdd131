@@ -1,43 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Moses Ramirez">
-    <meta name="title" content="Snack Time Hub">
-    <meta name="description" content="Snack Time Hub is your go-to destination for delicious snacks and treats.">
-    <meta name="keywords" content="snacks, treats, food, dessert">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Moses Ramirez" />
+  <meta name="title" content="Snack Time Hub" />
+  <meta name="description" content="Snack Time Hub is your go-to destination for delicious snacks and treats." />
+  <meta name="keywords" content="snacks, treats, food, dessert" />
 
-    <title>Snack Time Hub - snacktimehub.com</title>
+  <title>Snack Time Hub - snacktimehub.com</title>
 
-    <link rel="stylesheet" href="site_plan.css">
-    <script src="site_plan.js" defer></script>
+  <link rel="stylesheet" href="styles/site_plan.css" />
+  <script src="scripts/site_plan.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:opsz@18..144&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=TASA+Explorer:wght@400..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-    <header>
-        <h1>Snack Time Hub - snacktimehub.com</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Overview</h2>
-            <p>Snack Time Hub is your go-to destination for delicious snacks and treats. Our site plan outlines the key features and pages that make up our website.</p>
-        </section>
-        <section>
-            <h2>Site Structure</h2>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Snack Time Hub. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Snack Time Hub - snacktimehub.com</h1>
+  </header>
+
+  <main>
+    <!-- Purpose Section -->
+    <section class="purpose">
+      <h2>Purpose</h2>
+      <p>
+       Snack Time Hub is a website dedicated to providing delicious snacks and treats to satisfy your cravings. Our mission is to offer a wide variety of high-quality snacks that cater to different tastes and preferences, ensuring that everyone can find something they love.
+    </p>
+    </section>
+
+    <!-- Scenarios Section -->
+    <section class="scenarios">
+      <h2>Scenarios</h2>
+      <ul>
+        <li>What can I snack on today?</li>
+        <li>How can I satisfy my sweet tooth?</li>
+        <li>What are some healthy snack options?</li>
+      </ul>
+    </section>
+
+    <!-- Color Schema Section -->
+    <section class="color-schema">
+      <h2>Color Schema</h2>
+      <div class="schema-grid"><div class="color-box" style="background-color: #2D7DD2;"></div><p><strong>#2D7DD2</strong> — Primary Blue: Header/Footer Background, Section Title Text</p></div>
+      <div class="schema-grid"><div class="color-box" style="background-color: #EEB902;"></div><p><strong>#EEB902</strong> — Secondary Yellow: Highlights and Header Elements</p></div>
+      <div class="schema-grid"><div class="color-box" style="background-color: #F45D01;"></div><p><strong>#F45D01</strong> — Accent Orange: Buttons and Emphasis Areas</p></div>
+      <div class="schema-grid"><div class="color-box" style="background-color: #97CC04;"></div><p><strong>#97CC04</strong> — Light Green: Info Borders and Table Headers</p></div>
+      <div class="schema-grid"><div class="color-box" style="background-color: #474647;"></div><p><strong>#474647</strong> — Dark Gray: Footer Background and Body Text</p></div>
+      <div class="schema-grid"><div class="color-box" style="background-color: #fff8f0;"></div><p><strong>#FFF8F0</strong> — Light Background: Primary Page Background</p></div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="typography">
+      <h2>Typography</h2>
+      <div class="typography-sample" style="font-family: 'Segoe UI', sans-serif;">
+        <div class="font-name">Segoe UI</div>
+        <div class="sample-text">Used for all body text and headings</div>
+      </div>
+      <div class="typography-sample" style="font-family: sans-serif; font-style: italic;">
+        <div class="font-name">Fallback Sans-serif</div>
+        <div class="sample-text">Generic fallback font</div>
+      </div>
+    </section>
+
+    <!-- Page Design Section -->
+    <section class="page-design">
+      <h2>Page Design</h2>
+      <p>
+        The website features a clean and modern design with a focus on user experience. The layout is intuitive, making it easy for users to navigate through different sections. The color scheme is vibrant yet balanced, creating an inviting atmosphere. High-quality images of snacks are prominently displayed to entice visitors. The typography is clear and legible, ensuring that all information is easily accessible.
+      </p>
+    </section>
+
+    <!-- Mobile Wireframe Section -->
+    <section class="wireframe">
+      <h2>Mobile Home Page Wireframe</h2>
+      <img src="images/mobile_siteplan.jpg" alt="Mobile Wireframe 1">
+      <img src="images/mobile_siteplan_wf.jpg" alt="Mobile Wireframe 2">
+    </section>
+
+    <!-- Desktop Wireframe Section -->
+    <section class="desktop-wireframe">
+      <h2>Desktop Home Page Wireframe</h2>
+      <img src="images/desktop_siteplan.jpg" alt="Desktop Wireframe 1">
+      <img src="images/desktop_siteplan_wf.jpg" alt="Desktop Wireframe 2">
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; © 2025 Snack Time Hub - Moses Ramirez</p>
+    <p class="last-modification"></p>
+  </footer>
 </body>
 </html>
