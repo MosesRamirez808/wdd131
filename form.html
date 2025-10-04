@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Product Review Form">
+  <meta name="description" content="Submit your review and feedback for our futuristic products.">
   <meta name="author" content="Moses Ramirez">
-
   <title>Product Review Form</title>
+
   <link rel="stylesheet" href="styles/form.css">
   <script src="scripts/form.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
   <div class="container">
     <header class="header">
-      <h2>Product Review</h2>
+      <h1>Product Review</h1>
     </header>
 
     <form class="review-form" method="get" action="review.html">
@@ -59,6 +63,7 @@
       <label for="installDate" class="label-title">Date of Installation</label>
       <input type="date" id="installDate" name="installDate" required>
 
+
       <fieldset>
         <legend>Which features did you find useful in the product?<br><small>(Check all that apply)</small></legend>
         <div class="checkbox-group">
@@ -75,7 +80,8 @@
       <label for="userName" class="label-title">Your Name <small>(Optional)</small></label>
       <input type="text" id="userName" name="userName" placeholder="Your name">
 
-      <button type="submit" class="submit-btn">Post Review</button>
+      <input type="submit" class="submit-btn" value="Post Review">
+
     </form>
 
     <footer class="footer">
